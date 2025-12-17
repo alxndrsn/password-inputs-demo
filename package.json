@@ -1,0 +1,59 @@
+{
+  "name": "password-inputs-demo",
+  "packageManager": "yarn@4.12.0",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@emotion/react": "11.10",
+    "@emotion/styled": "^11.8.1",
+    "@fontsource/roboto": "^4.5.8",
+    "@hapi/bourne": "^3.0.0",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "5.9",
+    "@sentry/react": "7.43.0",
+    "@sentry/tracing": "7.43.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.6",
+    "formik": "^2.2.10",
+    "formik-mui": "^5.0.0-alpha.1",
+    "lodash-es": "^4.17.21",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0",
+    "react-scripts": "^5.0.1",
+    "yup": "^0.32.11",
+    "zxcvbn": "^4.4.2"
+  },
+  "scripts": {
+    "start": "craco start --verbose",
+    "build": "craco build",
+    "lint": "eslint --cache --max-warnings=0 ./src/ ./webpack/",
+    "test": "../scripts/scriptcheck ./scripts && yarn lint && yarn test:jest",
+    "test:jest": "craco test --watchAll=false",
+    "eject": "craco eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@craco/craco": "^6.4.5",
+    "@sentry/cli": "^2.37.0",
+    "eslint": "^8.17.0"
+  },
+  "volta": {
+    "node": "24.12.0",
+    "yarn": "4.12.0"
+  }
+}
