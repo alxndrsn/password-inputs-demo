@@ -23,13 +23,18 @@ jobs:
     - run: yarn test
     - run: yarn build
   deploy:
+    timeout-minutes: 5
     needs: test
-    if: github.ref == 'refs/heads/master'
+    #if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
+    - run: corepack enable
+    - uses: actions/setup-node@v6
+      with:
+        node-version-file: package.json
+        cache: yarn
     - run: yarn install --immutable
-    - run: yarn test
     - run: yarn build
     - uses: actions/upload-pages-artifact@v3
       with:
