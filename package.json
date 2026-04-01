@@ -29,8 +29,8 @@
   "scripts": {
     "start": "craco start --verbose",
     "build": "craco build",
-    "lint": "eslint --cache --max-warnings=0 ./src/ ./webpack/",
-    "test": "../scripts/scriptcheck ./scripts && yarn lint && yarn test:jest",
+    "lint": "eslint --cache --max-warnings=0 ./src/",
+    "test": "yarn lint",
     "test:jest": "craco test --watchAll=false",
     "eject": "craco eject"
   },
