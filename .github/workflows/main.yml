@@ -27,7 +27,7 @@ jobs:
   deploy:
     timeout-minutes: 5
     needs: test
-    #if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v6
