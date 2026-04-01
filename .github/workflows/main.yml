@@ -1,0 +1,37 @@
+name: Main
+
+on:
+  push:
+    branches: master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    timeout-minutes: 2
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - run: corepack enable
+    - uses: actions/setup-node@v6
+      with:
+        node-version-file: package.json
+        cache: yarn
+    - run: yarn install --immutable
+    - run: yarn test
+    - run: yarn build
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v6
+    - run: yarn install --immutable
+    - run: yarn test
+    - run: yarn build
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist
+    - uses: actions/deploy-pages@v4
