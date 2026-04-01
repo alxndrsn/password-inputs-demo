@@ -40,5 +40,5 @@ jobs:
     - run: yarn build
     - uses: actions/upload-pages-artifact@v3
       with:
-        path: ./build
+        path: ./dist
     - uses: actions/deploy-pages@v4
