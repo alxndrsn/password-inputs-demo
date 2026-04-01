@@ -37,7 +37,7 @@ jobs:
         node-version-file: package.json
         cache: yarn
     - run: yarn install --immutable
-    - run: yarn build
+    - run: PUBLIC_URL=/password-inputs-demo yarn build
     - uses: actions/upload-pages-artifact@v3
       with:
         path: ./build
