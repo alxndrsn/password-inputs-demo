@@ -27,6 +27,7 @@
     "zxcvbn": "^4.4.2"
   },
   "scripts": {
+    "bundlesize": "yarn build && source-map-explorer --no-border-checks 'build/static/js/main.*.js'",
     "start": "craco start --verbose",
     "build": "craco build",
     "lint": "eslint --cache --max-warnings=0 ./src/ ./webpack/",
@@ -50,7 +51,8 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^6.4.5",
     "@sentry/cli": "^2.37.0",
-    "eslint": "^8.17.0"
+    "eslint": "^8.17.0",
+    "source-map-explorer": "^2.5.3"
   },
   "volta": {
     "node": "24.12.0",
