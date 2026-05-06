@@ -40,7 +40,7 @@ class ChangePasswordPage extends Component {
   };
 
   render() {
-    const { navigate } = this.props;
+    const { onSuccess } = this.props;
 
     return (
       <FixedWidthPage maxWidth={300} center>
@@ -50,7 +50,7 @@ class ChangePasswordPage extends Component {
             initialValues={initialValues}
             submitLabel="Change Password"
             preprocess={preprocess}
-            onSuccess={() => navigate('/change-password/success')}
+            onSuccess={onSuccess}
           />
         </div>
       </FixedWidthPage>

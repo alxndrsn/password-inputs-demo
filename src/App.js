@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   render() {
-    return <ChangePasswordPage/>;
+    return <ChangePasswordPage onSuccess={() => alert('Success!  Supplied password passed all checks.')}/>;
   }
 }
 export default App;
